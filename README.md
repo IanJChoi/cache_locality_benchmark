@@ -5,8 +5,8 @@ This project benchmarks two memory-access patterns on a 32MB byte array where ea
 - `method_a`: scans from the first element to the last element, and repeats that full scan 10,000 times.
 - `method_b`: reads each element 10,000 times before moving to the next element.
 
-The goal is to observe how loop ordering changes cache behavior across the L1/L2/L3 hierarchy.
-Caches fetch memory in cache-line units (64 bytes on this machine), so access pattern matters even when total arithmetic work is similar.
+The goal is to observe how loop ordering changes behavior across the L1/L2/L3 cache hierarchy.
+Caches fetch data in cache-line units (64 bytes on this machine), and newer accesses evict older cache lines over time, so access pattern matters even when total arithmetic work is similar.
 
 Test machine (author's environment): Intel MacBook Pro
 - L1I: 32KB
