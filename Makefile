@@ -1,19 +1,15 @@
-CC=clang
-CFLAGS=-O3 -std=c11 -Wall -Wextra -Wpedantic
-
-TARGET=cache_lab
-SRCS=main.c spatial.c temporal.c
-OBJS=$(SRCS:.c=.o)
+CC = cc
+CFLAGS = -O2 -Wall -Wextra -std=c11
 
 .PHONY: all clean
 
-all: $(TARGET)
+all: method_a method_b
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $(OBJS)
+method_a: method_a.c
+	$(CC) $(CFLAGS) method_a.c -o method_a
 
-%.o: %.c tools.h
-	$(CC) $(CFLAGS) -c $< -o $@
+method_b: method_b.c
+	$(CC) $(CFLAGS) method_b.c -o method_b
 
 clean:
-	rm -f $(TARGET) $(OBJS)
+	rm -f method_a method_b
