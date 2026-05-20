@@ -70,6 +70,5 @@ elapsed: 49.046835 sec
 ```
 
 ## Notes
-
 - Results can vary significantly by CPU/cache architecture, power management, temperature, and background load.
 - Prefer multiple runs and compare average/median values instead of relying on a single run.
